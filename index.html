@@ -1,13 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISDH Narvacan MSS Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ISDH Narvacan - Medical Social Service</title>
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f4f4;
+    }
+
+    .container{
+      text-align: center;
+      background: white;
+      padding: 40px;
+      width: 600px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* LOGOS */
+    .logo-container{
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+
+    .logo-container img{
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* TITLE & SUBTITLE */
+    .title{
+      color: rgb(104, 0, 104);
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .subtitle{
+      color: rgb(85, 0, 85);
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 35px;
+    }
+
+    /* BUTTONS */
+    .button-container{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .btn{
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .uis-btn{
+      background-color: green;
+    }
+
+    .uis-btn:hover{
+      background-color: darkgreen;
+    }
+
+    .pmrf-btn{
+      background-color: blue;
+    }
+
+    .pmrf-btn:hover{
+      background-color: darkblue;
+    }
+
+  </style>
 </head>
+
 <body>
-    <h1 style="color:blueviolet; font-family: Arial, Helvetica, sans-serif;">Ilocos District Hospital Narvacan</h1>
-    <h1 style="color:blueviolet; font-family: Arial, Helvetica, sans-serif;">Medical Social Service</h1>
-    <h2>Work in progress...</h2>
+
+  <div class="container">
+
+    <!-- LOGOS -->
+    <div class="logo-container">
+      <!-- Replace with your logo file names -->
+      <img src="ISDHN LOGO2.jpg" alt="Logo 1">
+      <img src="MSS LOGO2.jpg" alt="Logo 2">
+    </div>
+
+    <!-- TITLE -->
+    <div class="title">
+      Ilocos Sur District Hospital Narvacan
+    </div>
+
+    <!-- SUBTITLE -->
+    <div class="subtitle">
+      Medical Social Service
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="button-container">
+
+      <button class="btn uis-btn">
+        Unified Intake Sheet (UIS)
+      </button>
+
+      <button class="btn pmrf-btn">
+        PhilHealth Membership Registration Form (PMRF)
+      </button>
+
+    </div>
+
+  </div>
+
 </body>
 </html>
