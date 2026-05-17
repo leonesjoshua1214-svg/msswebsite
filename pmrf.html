@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PhilHealth PMRF Form</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background: #f4f4f4;
+    }
+
+    .container {
+        background: white;
+        padding: 20px;
+        max-width: 1000px;
+        margin: auto;
+        border-radius: 10px;
+    }
+
+    h2, h3 {
+        text-align: center;
+    }
+
+    .section {
+        margin-top: 20px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="text"], input[type="date"] {
+        width: 100%;
+        padding: 6px;
+        margin: 5px 0;
+    }
+
+    .row {
+        display: flex;
+        gap: 10px;
+    }
+
+    .col {
+        flex: 1;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid #ccc;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .btn {
+        margin-top: 20px;
+        padding: 10px;
+        background: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .btn:hover {
+        background: darkgreen;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>PHILHEALTH MEMBER REGISTRATION FORM (PMRF)</h2>
+
+<form action="generate_pmrf.php" method="POST">
+
+<!-- PIN + PURPOSE -->
+<div class="section">
+    <label>PHILHEALTH IDENTIFICATION NUMBER (PIN)</label>
+    <input type="text" name="pin">
+
+    <label>PURPOSE:</label><br>
+    <label><input type="checkbox" name="purpose_reg"> Registration</label>
+    <label><input type="checkbox" name="purpose_upd"> Updating</label>
+</div>
+
+<!-- PERSONAL DETAILS -->
+<div class="section">
+<h3>I. PERSONAL DETAILS</h3>
+
+<label>Last Name</label>
+<input type="text" name="lname">
+
+<label>First Name</label>
+<input type="text" name="fname">
+
+<label>Name Extension (Jr, Sr, III)</label>
+<input type="text" name="ext">
+
+<label>Middle Name</label>
+<label><input type="checkbox" name="no_mname"> No Middle Name</label>
+<input type="text" name="mname">
+
+<hr>
+
+<h4>Mother's Maiden Name</h4>
+<input type="text" name="mother_lname" placeholder="Last Name">
+<input type="text" name="mother_fname" placeholder="First Name">
+<input type="text" name="mother_ext" placeholder="Name Extension">
+<input type="text" name="mother_mname" placeholder="Middle Name">
+<label><input type="checkbox" name="mother_no_mname"> No Middle Name</label>
+
+<hr>
+
+<h4>Spouse (if married)</h4>
+<input type="text" name="spouse_lname" placeholder="Last Name">
+<input type="text" name="spouse_fname" placeholder="First Name">
+<input type="text" name="spouse_ext" placeholder="Name Extension">
+<input type="text" name="spouse_mname" placeholder="Middle Name">
+<label><input type="checkbox" name="spouse_no_mname"> No Middle Name</label>
+
+<hr>
+
+<div class="row">
+    <div class="col">
+        <label>Date of Birth</label>
+        <input type="date" name="dob">
+    </div>
+    <div class="col">
+        <label>Place of Birth</label>
+        <input type="text" name="pob">
+    </div>
+</div>
+
+<label>Sex:</label><br>
+<label><input type="checkbox" name="sex_male" value="Male"> Male</label>
+<label><input type="checkbox" name="sex_female" value="Female"> Female</label>
+
+<br><br>
+
+<label>Civil Status:</label><br>
+<label><input type="checkbox" name="single"> Single</label>
+<label><input type="checkbox" name="married"> Married</label>
+<label><input type="checkbox" name="separated"> Legally Separated</label>
+<label><input type="checkbox" name="annulled"> Annulled</label>
+<label><input type="checkbox" name="widow"> Widow/er</label>
+
+<br><br>
+
+<label>Citizenship:</label><br>
+<label><input type="checkbox" name="filipino"> Filipino</label>
+<label><input type="checkbox" name="dual"> Dual Citizen</label>
+<label><input type="checkbox" name="foreign"> Foreign National</label>
+
+</div>
+
+<!-- ADDRESS -->
+<div class="section">
+<h3>II. ADDRESS AND CONTACT DETAILS</h3>
+
+<label>Permanent Home Address</label>
+<input type="text" name="barangay" placeholder="Barangay">
+<input type="text" name="city" placeholder="Municipality/City">
+<input type="text" name="province" placeholder="Province">
+
+<label>Mobile Number (Required)</label>
+<input type="text" name="mobile">
+</div>
+
+<!-- DEPENDENTS -->
+<div class="section">
+<h3>III. DECLARATION OF DEPENDENTS (Max 4)</h3>
+
+<table>
+<tr>
+    <th>Last Name</th>
+    <th>First Name</th>
+    <th>Name Extension</th>
+    <th>Middle Name</th>
+    <th>Relationship</th>
+    <th>Date of Birth</th>
+    <th>Citizenship</th>
+</tr>
+
+<tr>
+    <td><input type="text" name="d1_lname"></td>
+    <td><input type="text" name="d1_fname"></td>
+    <td><input type="text" name="d1_ext"></td>
+    <td><input type="text" name="d1_mname"></td>
+    <td><input type="text" name="d1_rel"></td>
+    <td><input type="date" name="d1_dob"></td>
+    <td><input type="text" name="d1_cit"></td>
+</tr>
+
+<tr>
+    <td><input type="text" name="d2_lname"></td>
+    <td><input type="text" name="d2_fname"></td>
+    <td><input type="text" name="d2_ext"></td>
+    <td><input type="text" name="d2_mname"></td>
+    <td><input type="text" name="d2_rel"></td>
+    <td><input type="date" name="d2_dob"></td>
+    <td><input type="text" name="d2_cit"></td>
+</tr>
+
+<tr>
+    <td><input type="text" name="d3_lname"></td>
+    <td><input type="text" name="d3_fname"></td>
+    <td><input type="text" name="d3_ext"></td>
+    <td><input type="text" name="d3_mname"></td>
+    <td><input type="text" name="d3_rel"></td>
+    <td><input type="date" name="d3_dob"></td>
+    <td><input type="text" name="d3_cit"></td>
+</tr>
+
+<tr>
+    <td><input type="text" name="d4_lname"></td>
+    <td><input type="text" name="d4_fname"></td>
+    <td><input type="text" name="d4_ext"></td>
+    <td><input type="text" name="d4_mname"></td>
+    <td><input type="text" name="d4_rel"></td>
+    <td><input type="date" name="d4_dob"></td>
+    <td><input type="text" name="d4_cit"></td>
+</tr>
+</table>
+
+</div>
+
+<!-- UPDATING / AMENDMENT -->
+<div class="section">
+<h3>IV. UPDATING / AMENDMENT</h3>
+
+<label><input type="checkbox" name="corr_name"> Change/Correction of Name</label>
+<input type="text" name="from_name" placeholder="FROM">
+<input type="text" name="to_name" placeholder="TO">
+
+<br><br>
+
+<label><input type="checkbox" name="corr_dob"> Correction of Date of Birth</label>
+<input type="text" name="from_dob" placeholder="FROM">
+<input type="text" name="to_dob" placeholder="TO">
+
+<br><br>
+
+<label><input type="checkbox" name="corr_sex"> Correction of Sex</label>
+<input type="text" name="from_sex" placeholder="FROM">
+<input type="text" name="to_sex" placeholder="TO">
+
+<br><br>
+
+<label><input type="checkbox" name="corr_civil"> Change of Civil Status</label>
+<input type="text" name="from_civil" placeholder="FROM">
+<input type="text" name="to_civil" placeholder="TO">
+
+<br><br>
+
+<label><input type="checkbox" name="update_info"> Updating of Personal Information / Change Category</label>
+<input type="text" name="from_info" placeholder="FROM">
+<input type="text" name="to_info" placeholder="TO">
+</div>
+
+<!-- SIGNATURE -->
+<div class="section">
+    <label>Member's Signature Over Printed Name</label>
+    <input type="text" name="signature">
+
+    <label>Date</label>
+    <input type="date" name="date_signed">
+</div>
+
+<!-- PRINT BUTTON -->
+<button class="btn" type="submit">GENERATE PDF</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
